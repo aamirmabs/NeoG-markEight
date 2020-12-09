@@ -10,15 +10,28 @@ export default function App() {
 
   // handle user input
   function handleUserInput(e) {
+    console.log(e.target.value);
     let userInputFlag = e.target.value.trim();
     let country = flags[userInputFlag];
     let dispMsg = "";
 
     if (country) {
-      // console.log("Exists", country);
-
       dispMsg = userInputFlag + " is the flag of " + country;
-      // console.log(dispMsg);
+    } else {
+      dispMsg = "Seems like that is not a country flag. ";
+    }
+
+    setMsg(dispMsg);
+  }
+
+  function handleFlagClick(e) {
+    // console.log(e.target.innerText);
+    let userInputFlag = e.target.innerText;
+    let country = flags[userInputFlag];
+    let dispMsg = "";
+
+    if (country) {
+      dispMsg = userInputFlag + " is the flag of " + country;
     } else {
       dispMsg = "Seems like that is not a country flag. ";
     }
@@ -29,13 +42,22 @@ export default function App() {
   return (
     <div className="App">
       <h1>Flag Detector!</h1>
-      <h2>
-        Paste the Emoji Flag of your country and we'll tell you where you are
-        from...
-      </h2>
-
       <input onKeyUpCapture={handleUserInput} />
-      <p>{msg}</p>
+      <h4>
+        Paste the Emoji Flag... <br />
+        We'll guess where you are from 😉 <br /> Or <br /> choose one of these
+        flags
+      </h4>
+      <ul id="flag-row">
+        <li onClick={handleFlagClick}>🇦🇺</li>
+        <li onClick={handleFlagClick}>🇨🇽</li>
+        <li onClick={handleFlagClick}>🇬🇷</li>
+        <li onClick={handleFlagClick}>🇰🇪</li>
+        <li onClick={handleFlagClick}>🇸🇯</li>
+      </ul>
+      <div id="result-box">
+        <p>{msg}</p>
+      </div>
     </div>
   );
 }

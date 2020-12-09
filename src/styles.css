@@ -2,3 +2,21 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+input {
+  font-size: 2em;
+  padding: 0.5em;
+  width: 50%;
+}
+
+ul#flag-row li {
+  display: inline;
+  padding: 5px;
+  font-size: 2.5em;
+}
+
+#result-box {
+  background-color: #f2f3f4;
+  padding: 5px;
+  font-size: 3em;
+}
