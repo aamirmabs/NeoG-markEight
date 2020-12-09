@@ -50,23 +50,39 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Flag Detector!</h1>
-      <input onKeyUpCapture={handleUserInput} />
-      <h4>
-        Paste the Emoji Flag... <br />
-        We'll guess where you are from 😉 <br /> Or <br /> choose one of these
-        flags
-      </h4>
-      <ul id="flag-row">
-        <li onClick={handleFlagClick}>🇦🇺</li>
-        <li onClick={handleFlagClick}>🇨🇽</li>
-        <li onClick={handleFlagClick}>🇬🇷</li>
-        <li onClick={handleFlagClick}>🇰🇪</li>
-        <li onClick={handleFlagClick}>🇸🇯</li>
-      </ul>
-      <div id="result-box" style={{ backgroundColor: bg }}>
-        <h6>RESULT</h6>
-        <p>{msg}</p>
+      <div id="flag-detector">
+        <h1>Flag Detector!</h1>
+        <input onKeyUpCapture={handleUserInput} />
+        <h4>
+          Paste the Emoji Flag... <br />
+          We'll guess where you are from 😉 <br /> Or <br /> choose one of these
+          flags
+        </h4>
+        <ul class="flag-row">
+          <li onClick={handleFlagClick}>🇦🇺</li>
+          <li onClick={handleFlagClick}>🇨🇽</li>
+          <li onClick={handleFlagClick}>🇬🇷</li>
+          <li onClick={handleFlagClick}>🇰🇪</li>
+          <li onClick={handleFlagClick}>🇸🇯</li>
+        </ul>
+        <ul class="flag-row">
+          <li onClick={handleFlagClick}>🇯🇴</li>
+          <li onClick={handleFlagClick}>🇲🇽</li>
+          <li onClick={handleFlagClick}>🇻🇳</li>
+          <li onClick={handleFlagClick}>🇰🇪</li>
+          <li onClick={handleFlagClick}>🇲🇬</li>
+        </ul>
+        <ul class="flag-row">
+          <li onClick={handleFlagClick}>🇲🇼</li>
+          <li onClick={handleFlagClick}>🇧🇮</li>
+          <li onClick={handleFlagClick}>🇰🇿</li>
+          <li onClick={handleFlagClick}>🇳🇮</li>
+          <li onClick={handleFlagClick}>🇹🇼</li>
+        </ul>
+        <div id="result-box" style={{ backgroundColor: bg }}>
+          <h6>RESULT</h6>
+          <p>{msg}</p>
+        </div>
       </div>
     </div>
   );

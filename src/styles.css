@@ -1,6 +1,34 @@
 .App {
   font-family: sans-serif;
+  margin: auto;
   text-align: center;
+  width: 75%;
+  padding: 10px;
+}
+
+#flag-detector {
+  padding: 2%;
+  margin: 2%;
+}
+
+body {
+  width: 100%;
+  z-index: 1; /* matters! */
+  overflow: hidden;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 400%;
+  background: linear-gradient(to bottom, yellowgreen, orange, purple);
+  transition: transform 4s;
+  z-index: -1;
+}
+body:hover::before {
+  transform: translateY(-70%);
 }
 
 input {
@@ -9,16 +37,32 @@ input {
   width: 50%;
 }
 
-ul#flag-row li {
+ul {
+  margin: 2px;
+}
+
+ul.flag-row li {
   display: inline;
   padding: 5px;
   font-size: 2.5em;
 }
 
+#flag-detector {
+  margin: 1%;
+  padding: 1%;
+  background-color: #f6f6f6;
+  border-radius: 3%;
+}
+
 #result-box {
   background-color: #f2f3f4;
-  padding: 1px;
+  padding: 1%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
   font-size: 2em;
+  border-radius: 5%;
 }
 
 #result-box h6 {
