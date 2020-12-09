@@ -1,8 +1,29 @@
 const helper = {
   setFlagsDB: function () {
     return allFlags;
+  },
+  allBG: function () {
+    return randomBGColors;
   }
 };
+
+let randomBGColors = [
+  "#ABDEE6",
+  "#FFFFB5",
+  "#FFCCB6",
+  "#F3B0C3",
+  "#C6DBDA",
+  "#FEE1E8",
+  "#FED7C3",
+  "#ECD5E3",
+  "#FFAEA5",
+  "#FFC5BF",
+  "#D4F0F0",
+  "#CCE2CB",
+  "#FFDBCC",
+  "#ECEAE4",
+  "#A2E1DB"
+];
 
 let allFlags = {
   "🇦🇨": "Ascension Island",

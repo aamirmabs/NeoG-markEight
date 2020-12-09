@@ -4,13 +4,21 @@ import "./styles.css";
 
 export default function App() {
   const [msg, setMsg] = useState("");
+  const [bg, setBG] = useState("#F2F2F2");
 
   // get flag list from helper
   let flags = helper.setFlagsDB();
 
+  // change background of result when called background
+  let bgSet = helper.allBG();
+  function getRandomBGHex() {
+    setBG(bgSet[Math.floor(Math.random() * bgSet.length)]);
+  }
+
   // handle user input
   function handleUserInput(e) {
-    console.log(e.target.value);
+    // console.log(e.target.value);
+    getRandomBGHex();
     let userInputFlag = e.target.value.trim();
     let country = flags[userInputFlag];
     let dispMsg = "";
@@ -26,6 +34,7 @@ export default function App() {
 
   function handleFlagClick(e) {
     // console.log(e.target.innerText);
+    getRandomBGHex();
     let userInputFlag = e.target.innerText;
     let country = flags[userInputFlag];
     let dispMsg = "";
@@ -55,7 +64,8 @@ export default function App() {
         <li onClick={handleFlagClick}>🇰🇪</li>
         <li onClick={handleFlagClick}>🇸🇯</li>
       </ul>
-      <div id="result-box">
+      <div id="result-box" style={{ backgroundColor: bg }}>
+        <h6>RESULT</h6>
         <p>{msg}</p>
       </div>
     </div>

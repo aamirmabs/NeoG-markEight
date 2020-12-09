@@ -17,6 +17,10 @@ ul#flag-row li {
 
 #result-box {
   background-color: #f2f3f4;
-  padding: 5px;
-  font-size: 3em;
+  padding: 1px;
+  font-size: 2em;
+}
+
+#result-box h6 {
+  font-size: 0.5em;
 }
